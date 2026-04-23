@@ -1,0 +1,174 @@
+{
+	"projects": [
+		{
+			"category": "LionsGeek",
+			"title": "LionBot",
+			"description": "Built a community management and automation bot with leaderboards, challenge/review workflows, and gamified rewards to increase engagement.",
+			"tags": ["Python"],
+			"meta": "bot",
+			"href": "https://github.com/ie-orphane/lionbot",
+			"image": "/assets/lionbot.png"
+		},
+		{
+			"category": "LionsGeek",
+			"title": "LionsGeek.ma",
+			"description": "Designed and developed a landing page to showcase digital marketing and coding expertise with stronger user engagement.",
+			"tags": ["React"],
+			"meta": "web",
+			"href": "https://lionsgeek.ma/",
+			"image": "/assets/lionsgeek.png"
+		},
+		{
+			"category": "Casamemoire",
+			"title": "Casatourat",
+			"description": "Built the front-end for web and mobile, created API interfaces between backoffice and app, and implemented backend architecture for smooth cross-platform data flow.",
+			"tags": ["React", "Laravel", "Expo"],
+			"meta": "web • mobile",
+			"href": "https://casatourat.ma/",
+			"image": "/assets/casatourat.png"
+		},
+		{
+			"category": "JADARA",
+			"title": "YES Africa",
+			"description": "Assisted in building the Youth Empowerment Summit website and its management backoffice to improve engagement and streamline operations.",
+			"tags": ["React", "Laravel"],
+			"meta": "web",
+			"href": "https://youthempowermentsummit.africa/",
+			"image": "/assets/yesafrica.png"
+		},
+		{
+			"category": ".Learning",
+			"title": ".learning Web",
+			"description": "Web path experience for learning workflows, built and deployed with a fast iteration cycle on Vercel.",
+			"tags": ["Next.js"],
+			"meta": "web",
+			"href": "https://learning-web-path.vercel.app/",
+			"image": "/assets/learning-web.png"
+		},
+		{
+			"category": "Mktabti",
+			"title": "Mktabti",
+			"description": "Live website project focused on delivering a clean and accessible web experience for end users.",
+			"tags": ["React", "Laravel"],
+			"meta": "design • web",
+			"href": "https://mktabti.net/",
+			"image": "/assets/mktabti.png"
+		},
+		{
+			"category": ".Learning",
+			"title": "DotBot",
+			"description": "Developed an interactive personal learning bot for coding practice with automation features supporting self-learning.",
+			"tags": ["Python"],
+			"meta": "bot",
+			"href": "https://github.com/ie-orphane/.learning.bot",
+			"image": "/assets/dotbot.png"
+		},
+		{
+			"category": "Siraj",
+			"title": "Siraj Club",
+			"description": "Official website for Siraj Club, presenting content and structure in a polished, production-ready format.",
+			"tags": ["Next.js"],
+			"meta": "design • web",
+			"href": "https://www.siraj.club/",
+			"image": "/assets/siraj.png"
+		},
+		{
+			"category": "Siraj",
+			"title": "Wird",
+			"description": "A web platform project published on Vercel, focused on clean user experience and modern frontend delivery.",
+			"tags": ["Next.js"],
+			"meta": "design • web",
+			"href": "https://siraj-wird.vercel.app/",
+			"image": "/assets/wird.png"
+		},
+		{
+			"category": "CLB KLB",
+			"title": "CLB KLB",
+			"description": "Modern public website for CLB-KLB with updated interface structure and deployment-ready implementation.",
+			"tags": ["React", "Laravel"],
+			"meta": "design • web",
+			"href": "https://new.clb-klb.com/",
+			"image": "/assets/clbklb.png"
+		}
+	],
+	"technologies": {
+		"Frameworks": [
+			{ "name": "Next.js", "iconName": "nextjs2" },
+			{ "name": "Tailwind CSS", "iconName": "tailwindcss" },
+			{ "name": "Expo", "iconName": "expo" },
+			{ "name": "Laravel", "iconName": "laravel" }
+		],
+		"Languages": [
+			{ "name": "Python", "iconName": "python" },
+			{ "name": "C / C++", "iconName": "c++" },
+			{ "name": "TypeScript", "iconName": "typescript" }
+		],
+		"Tools": [
+			{ "name": "Git", "iconName": "git" },
+			{ "name": "Bash", "iconName": "bash" },
+			{ "name": "Bun", "iconName": "bunjs" },
+			{ "name": "Figma", "iconName": "figma" }
+		]
+	},
+	"journey": [
+		{
+			"period": "03/2026 - Present",
+			"location": "Casablanca, Morocco",
+			"title": "Full-stack Developer",
+			"place": "LionsGeek",
+			"engagement": "Freelance",
+			"mode": "Hybrid",
+			"points": [
+				"Delivering full-stack features across frontend and backend.",
+				"Building and maintaining production-ready web solutions with a focus on performance and UX.",
+				"Collaborating with stakeholders to ship iterative improvements and new product features."
+			]
+		},
+		{
+			"period": "10/2024 - 01/2026",
+			"location": "Ben Guerir, Morocco",
+			"title": "Software Engineering",
+			"place": "1337 Coding School (UM6P)",
+			"points": [
+				"Developed strong C proficiency through hands-on projects including personal libraries.",
+				"Built a 2D game and gained practical experience in graphics rendering and game logic.",
+				"Learned algorithm design, including sorting and searching techniques for optimization."
+			]
+		},
+		{
+			"period": "05/2024 - 07/2024",
+			"location": "Casablanca, Morocco",
+			"title": "Full-stack Developer",
+			"place": "LionsGeek",
+			"engagement": "Internship",
+			"mode": "Onsite",
+			"points": [
+				"Contributed to real client and internal projects as a full-stack intern.",
+				"Implemented frontend interfaces and backend integrations in a team development workflow.",
+				"Strengthened practical delivery skills through rapid iteration, reviews, and deployment tasks."
+			]
+		},
+		{
+			"period": "10/2023 - 04/2024",
+			"location": "Casablanca, Morocco",
+			"title": "Web Development",
+			"place": "LionsGeek",
+			"points": [
+				"Built a strong foundation in HTML, CSS, and JavaScript with exposure to React.",
+				"Worked on backend web applications using Laravel.",
+				"Used Git for collaboration and delivery of responsive user-friendly websites."
+			]
+		},
+		{
+			"period": "10/2022 - 02/2023",
+			"location": "Casablanca, Morocco",
+			"title": "Coding with Python",
+			"place": "GOMYCODE",
+			"points": [
+				"Learned data structures and object-oriented programming fundamentals.",
+				"Used NumPy, Pandas, and Matplotlib for data analysis tasks.",
+				"Built scripting and automation skills for practical workflows."
+			]
+		}
+	]
+}

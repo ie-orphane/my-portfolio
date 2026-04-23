@@ -19,7 +19,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "ILYASS ELYATIME",
-  description: "Portfolio showcasing web engineering, design systems, and AI-powered products.",
+  description:
+    "Portfolio showcasing web engineering, design systems, and AI-powered products.",
 };
 
 export default function RootLayout({
@@ -32,7 +33,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jetBrainsMono.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="IE PORTFOLIO" />
+      </head>
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
 }
