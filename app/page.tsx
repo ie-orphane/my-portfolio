@@ -74,7 +74,6 @@ function TopNav() {
           href="/ILYASS_ELYATIME_RESUME.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          download
           className="clip-brutal border border-white bg-white px-6 py-2 font-mono text-[11px] font-bold tracking-[0.2em] text-black uppercase transition-all hover:bg-zinc-200"
         >
           Resume
@@ -131,14 +130,13 @@ function ProjectsSection() {
               >
                 {/* <span className="pointer-events-none absolute top-0 right-0 h-14 w-14 border-b border-l border-white/20 bg-white/5" /> */}
                 <div className="flex items-center justify-between gap-2 border-b border-white/10 font-mono text-[11px] font-bold tracking-[0.2em] text-zinc-400 uppercase">
-                  <p className=" px-6 py-4">
+                  <p className="px-6 py-4">
                     <span className="text-white">{project.id} /</span>{" "}
                     {project.category}
                   </p>
                   {project.logo ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <div className="flex items-center gap-2  p-2 border-l border-white/20">
-
+                    <div className="flex items-center gap-2 border-l border-white/20 p-2">
                       <img
                         src={project.logo}
                         alt={`${project.category} logo`}
@@ -270,7 +268,7 @@ function JourneySection() {
         </h2>
         <div className="relative ml-4 border-l border-white/20 pl-8 md:ml-8 md:pl-10">
           {journey.map((entry, index) => (
-            <article key={entry.title} className="relative mb-12 last:mb-0">
+            <article key={index} className="relative mb-12 last:mb-0">
               <span
                 className={`absolute top-1 -left-8 mt-2 size-3 border-3 border-black outline-2 ${
                   index === 0
@@ -293,7 +291,14 @@ function JourneySection() {
                   </h3>
                   <div className="mt-2 flex flex-wrap items-center gap-2">
                     <div className="flex items-center gap-2">
-                      <EntityLogo src={entry.logo} label={entry.place} />
+                      {entry.logo && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={entry.logo}
+                          alt={`${entry.place} logo`}
+                          className="size-5 shrink-0 rounded-sm bg-white object-contain p-0.5"
+                        />
+                      )}
                       <p className="font-mono text-[11px] tracking-[0.2em] text-zinc-500 uppercase">
                         {entry.place}
                       </p>
@@ -355,8 +360,12 @@ function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black px-6 py-10 md:px-10">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-5 md:flex-row">
-        <p className="font-mono text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase">
-          (c) 2026 All rights reserved. Engineered with precision.
+        <p className="flex items-center gap-1 font-mono font-bold tracking-[0.2em] text-zinc-500 uppercase">
+          <span>©</span>
+          <span className="text-[10px]">
+            {new Date().getFullYear()} All rights reserved. Engineered with
+            precision.
+          </span>
         </p>
         <div className="flex gap-6">
           {[

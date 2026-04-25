@@ -7,7 +7,8 @@
 			"tags": ["Python"],
 			"meta": "bot",
 			"href": "https://github.com/ie-orphane/lionbot",
-			"preview": "/assets/previews/lionbot.png"
+			"preview": "/assets/previews/lionbot.png",
+			"logo": "/assets/logos/lionsgeek.png"
 		},
 		{
 			"category": "LionsGeek",
@@ -41,7 +42,7 @@
 		},
 		{
 			"category": ".Learning",
-			"title": ".learning Web",
+			"title": ".learning",
 			"description": "Web path experience for learning workflows, built and deployed with a fast iteration cycle on Vercel.",
 			"tags": ["Next.js"],
 			"meta": "web",
