@@ -7,16 +7,17 @@
 			"tags": ["Python"],
 			"meta": "bot",
 			"href": "https://github.com/ie-orphane/lionbot",
-			"image": "/assets/lionbot.png"
+			"preview": "/assets/previews/lionbot.png"
 		},
 		{
 			"category": "LionsGeek",
-			"title": "LionsGeek.ma",
+			"title": "LionsGeek",
 			"description": "Designed and developed a landing page to showcase digital marketing and coding expertise with stronger user engagement.",
 			"tags": ["React"],
 			"meta": "web",
 			"href": "https://lionsgeek.ma/",
-			"image": "/assets/lionsgeek.png"
+			"preview": "/assets/previews/lionsgeek.png",
+			"logo": "/assets/logos/lionsgeek.png"
 		},
 		{
 			"category": "Casamemoire",
@@ -25,7 +26,8 @@
 			"tags": ["React", "Laravel", "Expo"],
 			"meta": "web • mobile",
 			"href": "https://casatourat.ma/",
-			"image": "/assets/casatourat.png"
+			"preview": "/assets/previews/casatourat.png",
+			"logo": "/assets/logos/casamemoire.webp"
 		},
 		{
 			"category": "JADARA",
@@ -34,7 +36,8 @@
 			"tags": ["React", "Laravel"],
 			"meta": "web",
 			"href": "https://youthempowermentsummit.africa/",
-			"image": "/assets/yesafrica.png"
+			"preview": "/assets/previews/yesafrica.png",
+			"logo": "/assets/logos/jadara.jpg"
 		},
 		{
 			"category": ".Learning",
@@ -43,7 +46,7 @@
 			"tags": ["Next.js"],
 			"meta": "web",
 			"href": "https://learning-web-path.vercel.app/",
-			"image": "/assets/learning-web.png"
+			"preview": "/assets/previews/learning-web.png"
 		},
 		{
 			"category": "Mktabti",
@@ -52,7 +55,8 @@
 			"tags": ["React", "Laravel"],
 			"meta": "design • web",
 			"href": "https://mktabti.net/",
-			"image": "/assets/mktabti.png"
+			"preview": "/assets/previews/mktabti.png",
+			"logo": "/assets/logos/mktabti.png"
 		},
 		{
 			"category": ".Learning",
@@ -61,16 +65,17 @@
 			"tags": ["Python"],
 			"meta": "bot",
 			"href": "https://github.com/ie-orphane/.learning.bot",
-			"image": "/assets/dotbot.png"
+			"preview": "/assets/previews/dotbot.png"
 		},
 		{
 			"category": "Siraj",
-			"title": "Siraj Club",
+			"title": "Siraj",
 			"description": "Official website for Siraj Club, presenting content and structure in a polished, production-ready format.",
 			"tags": ["Next.js"],
 			"meta": "design • web",
 			"href": "https://www.siraj.club/",
-			"image": "/assets/siraj.png"
+			"preview": "/assets/previews/siraj.png",
+			"logo": "/assets/logos/siraj.png"
 		},
 		{
 			"category": "Siraj",
@@ -79,7 +84,8 @@
 			"tags": ["Next.js"],
 			"meta": "design • web",
 			"href": "https://siraj-wird.vercel.app/",
-			"image": "/assets/wird.png"
+			"preview": "/assets/previews/wird.png",
+			"logo": "/assets/logos/siraj.png"
 		},
 		{
 			"category": "CLB KLB",
@@ -88,7 +94,8 @@
 			"tags": ["React", "Laravel"],
 			"meta": "design • web",
 			"href": "https://new.clb-klb.com/",
-			"image": "/assets/clbklb.png"
+			"preview": "/assets/previews/clbklb.png",
+			"logo": "assets/logos/clbklb.png"
 		}
 	],
 	"technologies": {
@@ -118,6 +125,7 @@
 			"place": "LionsGeek",
 			"engagement": "Freelance",
 			"mode": "Hybrid",
+			"logo": "/assets/logos/lionsgeek.png",
 			"points": [
 				"Delivering full-stack features across frontend and backend.",
 				"Building and maintaining production-ready web solutions with a focus on performance and UX.",
@@ -129,6 +137,7 @@
 			"location": "Ben Guerir, Morocco",
 			"title": "Software Engineering",
 			"place": "1337 Coding School (UM6P)",
+			"logo": "/assets/logos/1337.png",
 			"points": [
 				"Developed strong C proficiency through hands-on projects including personal libraries.",
 				"Built a 2D game and gained practical experience in graphics rendering and game logic.",
@@ -142,6 +151,7 @@
 			"place": "LionsGeek",
 			"engagement": "Internship",
 			"mode": "Onsite",
+			"logo": "/assets/logos/lionsgeek.png",
 			"points": [
 				"Contributed to real client and internal projects as a full-stack intern.",
 				"Implemented frontend interfaces and backend integrations in a team development workflow.",
@@ -153,6 +163,7 @@
 			"location": "Casablanca, Morocco",
 			"title": "Web Development",
 			"place": "LionsGeek",
+			"logo": "/assets/logos/lionsgeek.png",
 			"points": [
 				"Built a strong foundation in HTML, CSS, and JavaScript with exposure to React.",
 				"Worked on backend web applications using Laravel.",
@@ -164,6 +175,7 @@
 			"location": "Casablanca, Morocco",
 			"title": "Coding with Python",
 			"place": "GOMYCODE",
+			"logo": "/assets/logos/gomycode.png",
 			"points": [
 				"Learned data structures and object-oriented programming fundamentals.",
 				"Used NumPy, Pandas, and Matplotlib for data analysis tasks.",

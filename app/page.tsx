@@ -23,6 +23,23 @@ function BrandLogo() {
   );
 }
 
+function EntityLogo({ src, label }: { src?: string; label: string }) {
+  const fallback = label.slice(0, 2).toUpperCase();
+
+  return src ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={`${label} logo`}
+      className="size-5 shrink-0 rounded-sm bg-white object-contain p-0.5"
+    />
+  ) : (
+    <span className="inline-flex size-5 shrink-0 items-center justify-center rounded-sm border border-white/20 bg-zinc-900 font-mono text-[8px] font-bold tracking-[0.08em] text-zinc-200">
+      {fallback}
+    </span>
+  );
+}
+
 function TopNav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/80 px-6 py-5 backdrop-blur-xl md:px-10">
@@ -112,16 +129,29 @@ function ProjectsSection() {
                 key={project.id}
                 className="clip-brutal card-glow group relative overflow-hidden md:col-span-4"
               >
-                <span className="pointer-events-none absolute top-0 right-0 h-14 w-14 border-b border-l border-white/20 bg-white/5" />
-                <p className="border-b border-white/10 px-6 py-4 font-mono text-[11px] font-bold tracking-[0.2em] text-zinc-400 uppercase">
-                  <span className="text-white">{project.id} /</span>{" "}
-                  {project.category}
-                </p>
+                {/* <span className="pointer-events-none absolute top-0 right-0 h-14 w-14 border-b border-l border-white/20 bg-white/5" /> */}
+                <div className="flex items-center justify-between gap-2 border-b border-white/10 font-mono text-[11px] font-bold tracking-[0.2em] text-zinc-400 uppercase">
+                  <p className=" px-6 py-4">
+                    <span className="text-white">{project.id} /</span>{" "}
+                    {project.category}
+                  </p>
+                  {project.logo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <div className="flex items-center gap-2  p-2 border-l border-white/20">
+
+                      <img
+                        src={project.logo}
+                        alt={`${project.category} logo`}
+                        className="size-7 rounded-sm bg-white object-contain p-0.5"
+                      />
+                    </div>
+                  ) : null}
+                </div>
                 <div className="relative overflow-hidden border-b border-white/10">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     alt={project.title}
-                    src={project.image}
+                    src={project.preview}
                     className="h-60 w-full object-cover opacity-70 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/15 to-transparent" />
@@ -262,9 +292,12 @@ function JourneySection() {
                     {entry.title}
                   </h3>
                   <div className="mt-2 flex flex-wrap items-center gap-2">
-                    <p className="font-mono text-[11px] tracking-[0.2em] text-zinc-500 uppercase">
-                      {entry.place}
-                    </p>
+                    <div className="flex items-center gap-2">
+                      <EntityLogo src={entry.logo} label={entry.place} />
+                      <p className="font-mono text-[11px] tracking-[0.2em] text-zinc-500 uppercase">
+                        {entry.place}
+                      </p>
+                    </div>
                     {entry.engagement && (
                       <span className="rounded-sm border border-white/20 bg-zinc-900 px-2 py-1 font-mono text-[10px] font-bold tracking-[0.16em] text-zinc-200 uppercase">
                         {entry.engagement}
