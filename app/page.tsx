@@ -23,23 +23,6 @@ function BrandLogo() {
   );
 }
 
-function EntityLogo({ src, label }: { src?: string; label: string }) {
-  const fallback = label.slice(0, 2).toUpperCase();
-
-  return src ? (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt={`${label} logo`}
-      className="size-5 shrink-0 rounded-sm bg-white object-contain p-0.5"
-    />
-  ) : (
-    <span className="inline-flex size-5 shrink-0 items-center justify-center rounded-sm border border-white/20 bg-zinc-900 font-mono text-[8px] font-bold tracking-[0.08em] text-zinc-200">
-      {fallback}
-    </span>
-  );
-}
-
 function TopNav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/80 px-6 py-5 backdrop-blur-xl md:px-10">
@@ -82,6 +65,22 @@ function TopNav() {
     </nav>
   );
 }
+
+const tagToIconName = (tag: string) => {
+  const mapping: Record<string, string> = {
+    React: "react",
+    Laravel: "laravel",
+    Expo: "expo",
+    Tailwindcss: "tailwindcss",
+    Sqlite: "sqlite",
+    Python: "python",
+    "Next.js": "nextjs2",
+    Supabase: "supabase",
+    Figma: "figma",
+    "Discord.py": "python",
+  };
+  return mapping[tag] ?? "";
+};
 
 function HeroSection() {
   return (
@@ -126,9 +125,8 @@ function ProjectsSection() {
             .map((project) => (
               <article
                 key={project.id}
-                className="clip-brutal card-glow group relative overflow-hidden md:col-span-4"
+                className="clip-brutal card-glow group flex flex-col overflow-hidden md:col-span-4"
               >
-                {/* <span className="pointer-events-none absolute top-0 right-0 h-14 w-14 border-b border-l border-white/20 bg-white/5" /> */}
                 <div className="flex items-center justify-between gap-2 border-b border-white/10 font-mono text-[11px] font-bold tracking-[0.2em] text-zinc-400 uppercase">
                   <p className="px-6 py-4">
                     <span className="text-white">{project.id} /</span>{" "}
@@ -157,34 +155,36 @@ function ProjectsSection() {
                     {project.meta}
                   </p>
                 </div>
-                <div className="flex min-h-60 flex-col p-6">
+                <div className="h- flex min-h-auto flex-1 flex-col gap-4 p-6">
                   <h3 className="font-display text-2xl font-black tracking-tight text-white uppercase">
                     {project.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-zinc-400">
+                  <p className="text-sm leading-relaxed text-zinc-400">
                     {project.description}
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
+                  <div className="mt-2 mb-auto flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-sm border border-white/20 bg-zinc-900 px-2.5 py-1 font-mono text-[10px] font-bold tracking-[0.16em] text-zinc-200 uppercase"
+                        className="rounded-sm border flex items-center gap-1.5 border-white/20 bg-zinc-900 px-3 py-1.5 font-mono text-[10px] font-bold tracking-[0.16em] text-zinc-200 uppercase"
                       >
+                        <StackIcon
+                          name={tagToIconName(tag)}
+                          className="size-3 mb-0.5"
+                          variant="dark"
+                        />
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <div className="mt-7 flex items-center justify-between border-t border-white/10 pt-4">
-                    <span className="font-mono text-[11px] font-bold tracking-[0.18em] text-zinc-500 uppercase">
-                      {project.href.includes("github.com")
-                        ? "Source Code"
-                        : "Live Preview"}
-                    </span>
+                </div>
+                <div className="mt-auto px-6 pb-6">
+                  <div className="flex items-center justify-end border-t border-white/10 pt-4">
                     <a
                       href={project.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.18em] text-white uppercase transition-transform duration-200 group-hover:translate-x-1"
+                      className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.18em] text-zinc-500 uppercase transition-transform duration-200 group-hover:translate-x-1 group-hover:text-white"
                     >
                       {project.href.includes("github.com")
                         ? "Source Code"
