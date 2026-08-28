@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "ILYASS ELYATIME",
   description:
-    "Portfolio of La7ya, showcasing web engineering, design systems, and AI-powered products.",
+    "Portfolio of LAHYA, showcasing web engineering, design systems, and AI-powered products.",
 };
 
 export default function RootLayout({

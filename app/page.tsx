@@ -1,86 +1,14 @@
-import { EMAIL, LINKS } from "@/consts";
+import { EMAIL } from "@/consts";
 import StackIcon from "tech-stack-icons";
 import data from "@/data.json";
+import { Footer } from "@/components/footer";
+import { ProjectsSection } from "@/components/projects-section";
+import { TopNav } from "@/components/top-nav";
+import { getFeaturedProjects } from "@/lib/projects";
 
-const { projects, technologies, journey } = data;
+export const dynamic = "force-dynamic";
 
-function BrandLogo() {
-  return (
-    <svg
-      width="28"
-      height="27"
-      viewBox="0 0 40 39"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      className="size-6 shrink-0"
-    >
-      <path
-        d="M27.7358 38.9465L19.8563 30.5002L11.9768 38.9465L0.472769 38.4772L0 27.6848L8.50984 19.7079L0 11.8873L0.472769 0.625646L11.9768 0L19.8563 8.44622L27.7358 0L39.0822 0.625646L39.555 11.8873L31.0452 19.7079L39.555 27.6848L39.0822 38.4772L27.7358 38.9465Z"
-        fill="#F2F2F2"
-      />
-    </svg>
-  );
-}
-
-function TopNav() {
-  return (
-    <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/80 px-6 py-5 backdrop-blur-xl md:px-10">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
-        <div className="flex items-center gap-3">
-          <BrandLogo />
-          <p className="font-display text-xl font-black text-white uppercase sm:text-2xl">
-            La7ya
-          </p>
-        </div>
-        {/* <div className="hidden items-center gap-8 md:flex">
-          {[
-            ["Projects", "#projects"],
-            ["Technologies", "#technologies"],
-            ["Journey", "#journey"],
-            ["Contact", "#contact"],
-          ].map(([label, href], index) => (
-            <a
-              key={label}
-              href={href}
-              className={`font-mono text-xs font-bold uppercase tracking-[0.18em] transition-colors ${
-                index === 0
-                  ? "border-b-2 border-white pb-1 text-white"
-                  : "text-zinc-500 hover:text-zinc-200"
-              }`}
-            >
-              {label}
-            </a>
-          ))}
-        </div> */}
-        <a
-          href="/ILYASS_ELYATIME_RESUME.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="clip-brutal border border-white bg-white px-6 py-2 font-mono text-[11px] font-bold tracking-[0.2em] text-black uppercase transition-all hover:bg-zinc-200"
-        >
-          Resume
-        </a>
-      </div>
-    </nav>
-  );
-}
-
-const tagToIconName = (tag: string) => {
-  const mapping: Record<string, string> = {
-    React: "react",
-    Laravel: "laravel",
-    Expo: "expo",
-    Tailwindcss: "tailwindcss",
-    Sqlite: "sqlite",
-    Python: "python",
-    "Next.js": "nextjs2",
-    Supabase: "supabase",
-    Figma: "figma",
-    "Discord.py": "python",
-  };
-  return mapping[tag] ?? "";
-};
+const { technologies, journey } = data;
 
 function HeroSection() {
   return (
@@ -107,109 +35,6 @@ function HeroSection() {
         </div>
       </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black to-transparent" />
-    </section>
-  );
-}
-
-function ProjectsSection() {
-  return (
-    <section id="projects" className="px-6 py-28 md:px-10">
-      <div className="mx-auto w-full max-w-7xl">
-        <h2 className="font-display mb-16 text-4xl font-black tracking-tight text-white uppercase md:text-6xl">
-          Projects
-        </h2>
-        <div className="grid gap-8 md:grid-cols-12">
-          {projects
-            .map((p, i) => ({ ...p, id: i }))
-            .reverse()
-            .map((project) => (
-              <article
-                key={project.id}
-                className="clip-brutal card-glow group flex flex-col overflow-hidden md:col-span-4"
-              >
-                <div className="flex items-center justify-between gap-2 border-b border-white/10 font-mono text-[11px] font-bold tracking-[0.2em] text-zinc-400 uppercase">
-                  <p className="px-6 py-4">
-                    <span className="text-white">{project.id} /</span>{" "}
-                    {project.category}
-                  </p>
-                  {project.logo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <div className="flex items-center gap-2 border-l border-white/20 p-2">
-                      <img
-                        src={project.logo}
-                        alt={`${project.category} logo`}
-                        className="size-7 rounded-sm bg-white object-contain p-0.5"
-                      />
-                    </div>
-                  ) : null}
-                </div>
-                <div className="relative overflow-hidden border-b border-white/10">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    alt={project.title}
-                    src={project.preview}
-                    className="h-60 w-full object-cover opacity-70 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/15 to-transparent" />
-                  <p className="absolute bottom-3 left-4 border border-white/25 bg-black/60 px-2.5 py-1 font-mono text-[10px] font-bold tracking-[0.16em] text-zinc-200 uppercase backdrop-blur-sm">
-                    {project.meta}
-                  </p>
-                </div>
-                <div className="h- flex min-h-auto flex-1 flex-col gap-4 p-6">
-                  <h3 className="font-display text-2xl font-black tracking-tight text-white uppercase">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400">
-                    {project.description}
-                  </p>
-                  <div className="mt-2 mb-auto flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-sm border flex items-center gap-1.5 border-white/20 bg-zinc-900 px-3 py-1.5 font-mono text-[10px] font-bold tracking-[0.16em] text-zinc-200 uppercase"
-                      >
-                        <StackIcon
-                          name={tagToIconName(tag)}
-                          className="size-3 mb-0.5"
-                          variant="dark"
-                        />
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="mt-auto px-6 pb-6">
-                  <div className="flex items-center justify-end border-t border-white/10 pt-4">
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.18em] text-zinc-500 uppercase transition-transform duration-200 group-hover:translate-x-1 group-hover:text-white"
-                    >
-                      {project.href.includes("github.com")
-                        ? "Source Code"
-                        : "Live Preview"}
-                      <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        className="h-3.5 w-3.5"
-                      >
-                        <path
-                          d="M6 12h12m0 0-4-4m4 4-4 4"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.8"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </article>
-            ))}
-        </div>
-      </div>
     </section>
   );
 }
@@ -356,47 +181,15 @@ function ContactSection() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-white/10 bg-black px-6 py-10 md:px-10">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-5 md:flex-row">
-        <p className="flex items-center gap-1 font-mono font-bold tracking-[0.2em] text-zinc-500 uppercase">
-          <span>©</span>
-          <span className="text-[10px]">
-            {new Date().getFullYear()} All rights reserved. Engineered with
-            precision.
-          </span>
-        </p>
-        <div className="flex gap-6">
-          {[
-            ["GitHub", LINKS.github],
-            ["LinkedIn", LINKS.linkedin],
-            ["X-Twitter", LINKS.x_twitter],
-            ["Source", LINKS.source],
-          ].map(([label, href]) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase transition-colors hover:text-white"
-            >
-              {label}
-            </a>
-          ))}
-        </div>
-      </div>
-    </footer>
-  );
-}
+export default async function Home() {
+  const projects = await getFeaturedProjects(3);
 
-export default function Home() {
   return (
     <div className="bg-black text-white">
       <TopNav />
       <main>
         <HeroSection />
-        <ProjectsSection />
+        <ProjectsSection projects={projects} showSeeMore />
         <TechnologiesSection />
         <JourneySection />
         <ContactSection />
